@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Task11
+{
+  public static void main(String[]args)
+  {
+    Scanner read = new Scanner (System.in);
+    
+    int x;
+    for(x=40; x<=50; x++)
+    {
+      int i;
+      for(i=1; i=x; i++)
+      {
+        int count = 0;
+        if(x % i == 0)
+        {
+          count = count + 1;
+        }
+      }
+      
+      if(count == 2)
+      {
+        System.out.println(x);
+      }
+    }
+  }
+}

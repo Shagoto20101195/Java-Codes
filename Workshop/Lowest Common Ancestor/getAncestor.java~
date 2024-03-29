@@ -1,0 +1,17 @@
+import java.util.*;
+import java.io.*;
+public class getAncestor
+{
+  static int nmax = (int)2e5 + 10;
+  static ArrayList<Integer> [] arr = new ArrayList[nmax];
+  static int [][] ancestor = new int[nmax][20]; // 2^20 > 10^6
+  // ancestor[x][i] = 2^i -th ancestor of x
+  
+  
+  public static void main(String[] args) throws IOException
+  {
+    Scanner read = new Scanner(System.in);
+    
+    
+  }
+}

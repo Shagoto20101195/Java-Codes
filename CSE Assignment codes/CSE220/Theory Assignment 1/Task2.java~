@@ -1,0 +1,64 @@
+// Task 2
+import java.util.*;
+public class Task2
+{
+  public static void main(String [] args)
+  {
+    Random random = new Random();
+    int size = 7;
+    int n = 7;
+    int start = 0;
+    Object [] arr = {"A", "B", "C", "D", "E", "F", "G"};
+    while(n > 1)
+    {
+      int val = random.nextInt(4);
+      
+      System.out.println("Value: "+val);
+      if(val == 1)
+      {
+        arr[size/2] = null;
+        int index = n / 2;
+        for(int i = 0; i<size - (n/2) - 1; i++)
+        {
+          arr[index] = arr[(index + 1) % arr.length];
+          index = (index + 1) % arr.length;
+        }
+        
+        arr[index] = null;
+        size--;
+        n--;
+        System.out.println("After removing, the current state:");
+        for(int i = 0; i<arr.length; i++)
+        {
+          System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+      }
+      
+      else
+      {
+        int index = start;
+        Object temp = arr[index];
+        for(int i = 0; i<size; i++)
+        {
+          Object temp2 = arr[(index+1) % arr.length];
+          arr[(index+1) % arr.length] = temp;
+          temp = temp2;
+          index = (index + 1) % arr.length;
+        }
+        
+        start = (start + 1) % arr.length;
+        
+        System.out.println("After rotating:");
+        for(int i = 0; i<arr.length; i++)
+        {
+          System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+        
+      }
+    }
+    
+    System.out.println("Winner: "+arr[start]);
+  }
+}

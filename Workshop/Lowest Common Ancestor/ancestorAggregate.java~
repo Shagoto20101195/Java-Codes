@@ -1,0 +1,26 @@
+import java.util.*;
+import java.io.*;
+public class ancestorAggregate
+{
+  static int nmax = (int)2e5 + 10;
+  static Pair
+  
+  public static void main(String[] args) throws IOException
+  {
+    Scanner read = new Scanner(System.in);
+    
+    
+  }
+}
+
+class Pair
+{
+  int x;
+  int y;
+  
+  public Pair(int v1, int v2)
+  {
+    x = v1;
+    y = v2;
+  }
+}

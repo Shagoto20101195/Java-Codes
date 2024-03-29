@@ -1,0 +1,31 @@
+func min_partition():
+    // Here [i][j] is the substring from i-th to j-th index (inclusive)
+    Create isPalindrome [][]
+    // To store the minimum partitions needed for upto i+1-th index (exclusive)
+    Create partitions []
+    
+    for every possible length of substring:
+	for every possible starting index for a substring length:
+	    end = length + start - 1
+	    
+	    if length is 1:
+		then isPalindrome[start][end] = true
+		and partitions[end-1] = Infinity
+
+	    else if length is 2:
+		then isPalindrome[start][end] = true if string_char[start] = string_char[end], else false
+
+	    else:
+		isPalindrome[start][end] = true if string_char[start] = string_char[end] and isPalindrome[start+1][end-1], else false
+
+    for every index of string:
+	if isPalindrome[0][index] is true:
+	    then partitions[index] = 0
+	else:
+	    for every starting index till index:
+		if isPalindrome[starting_index+1][index] is true:
+		    then if partitions[starting_index] + 1 < partitions[index]:
+			do partitions[index] = partitions[starting_index] + 1
+
+    // Return the partition for whole string
+    return partitions[len(string)-1]

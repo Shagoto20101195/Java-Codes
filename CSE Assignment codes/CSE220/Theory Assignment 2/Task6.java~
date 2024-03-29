@@ -1,0 +1,27 @@
+public class Task6{
+  public static void print(int[]array,int idx){
+    if(idx<array.length){
+      double profit=calcProfit(array[idx]);
+      System.out.println((idx+1)+". Investment: "+array[idx]+"; Profit: "+profit);
+      print(array, idx+1);
+    }
+  }
+  
+  public static double calcProfit(int investment){
+    double prof = 0;
+    if(investment <= 100000)
+    {
+      int rest = investment - 25000;
+    }
+    else
+    {
+      int first = 75000;
+      int rest = investment - 100000;
+    }
+  }
+  
+  public static void main(String[]args){
+    int[]array={25000,100000,250000,350000};
+    print(array,0);
+  }
+}

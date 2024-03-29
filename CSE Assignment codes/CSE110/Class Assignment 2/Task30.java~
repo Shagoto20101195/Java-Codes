@@ -1,0 +1,55 @@
+import java.util.Scanner;
+public class Task30
+{
+  public static void main(String[]args)
+  {
+    Scanner read = new Scanner (System.in)
+    
+    System.out.println("Enter start");
+    int start = read.nextInt();
+    System.out.println("Enter finish");
+    int finish = read.nextInt();
+    
+    int prime = 0;
+    int perfect = 0;
+    int i;
+    for(i=start; i<=finish; i++)
+    {
+      int total = 0;
+      int loop1;
+      for(loop1=start; loop1<=finish; loop1++)
+      {
+        if(loop1 == start)
+        {
+        }
+        else if(start % loop1)
+        {
+          total = total + loop1;
+        }
+      }
+      if(total == start)
+        {
+          perfect = perfect + 1;
+        }
+        
+        int loop2;
+        int count = 0;
+        for(loop2=start; loop2<=finish; j++)
+        {
+          if(start % loop2 == 0)
+          {
+            count = count + 1;
+          }
+        }
+        
+        if(count == 2)
+        {
+          prime = prime + 1;
+        }
+        
+    }
+    
+    System.out.println(prime+" prime number");
+    System.out.println(perfect+" perfect number");
+  }
+}

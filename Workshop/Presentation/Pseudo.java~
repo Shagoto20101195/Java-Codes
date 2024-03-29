@@ -1,0 +1,6 @@
+// Pseudo Code for Recursive Approach
+  func isPalindrome(start, end):
+    
+    
+  func min_partition(start, end):
+    

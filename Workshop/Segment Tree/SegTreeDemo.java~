@@ -1,0 +1,59 @@
+import java.util.*;
+import java.io.*;
+public class SegTreeDemo
+{
+  static int nmax = (int)2e5 + 10;
+  static long [] tree = new long[4*nmax];
+  static long [] arr = new long[nmax];
+  
+  // O(n)
+  static void build(int id, int l, int r)
+  {
+    if(l == r)
+    {
+      tree[id] = arr[l]; 
+      return;
+    }
+    
+    int mid = (l+r) / 2;
+    
+    build(2*id, l, mid);
+    build(2*id+1, mid+1, r);
+    
+    tree[id] = tree[2*id] + tree[2*id+1];
+    return;
+  }
+  
+  // O(log n)
+  static void update(int id, int l, int r, int k, long u)
+  {
+    if(l == r)
+    {
+      tree[id] = u; /// assignment
+      ///tree[id] += u;  /// add
+      return;
+    }
+    
+    int mid = (l+r)/2;
+    
+    if(k <= mid)
+    {
+      update(2*id, l, mid, k, u);
+    }
+    else
+    {
+      update(2*id+1, mid+1, r, k, u);
+    }
+    
+    tree[id] = tree[2*id] + tree[2*id+1];
+    return;
+  }
+  
+  
+  public static void main(String [] args) throws IOException
+  {
+    Scanner read = new Scanner(System.in);
+    
+    
+  }
+}

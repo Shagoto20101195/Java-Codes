@@ -1,0 +1,11 @@
+import java.util.*;
+import java.io.*;
+public class TreeDiameter2
+{
+  static int nmax = (int)1e5 + 10;
+  
+  public static void main(String [] args) throws IOException
+  {
+    Scanner read = new Scanner(System.in);
+  }
+}

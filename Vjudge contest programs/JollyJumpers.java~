@@ -1,0 +1,68 @@
+//Written by Shagoto
+import java.util.Scanner;
+public class JollyJumpers
+{
+  public static void main(String[]args)
+  {
+    Scanner read = new Scanner (System.in);
+    
+    int n = read.nextInt();
+    int [] num = new int [n];
+    int [] dif = new int[n-1];
+    int count = 0;
+    int max = 0;
+    
+    for(int i = 0; i<num.length; i++)
+    {
+      num[i] = read.nextInt();
+    }
+    
+    for(int i = 0; i<dif.length; i++)
+    {
+      if(num[i] < num[i+1])
+      {
+        dif[i] = num[i+1] - num[i];
+        if(dif[i] > max)
+        {
+          max = dif[i];
+        }
+      }
+      
+      else
+      {
+        dif[i] = num[i] - num[i+1];
+        if(dif[i] > max)
+        {
+          max = dif[i];
+        }
+      }
+    }
+    
+    int temp = 0;
+    for(int i = 0; i<n-1; i++)
+    {
+      for(int j = 1; j<=max; j++)
+      {
+        if(temp == dif[i])
+        {
+          break;
+        }
+        
+        else if(j==dif[i])
+        {
+          count++;
+          temp = dif[i];
+        }
+      }
+    }
+    
+    if(count == n-1)
+    {
+      System.out.println("Jolly");
+    }
+    else
+    {
+      System.out.println("Not jolly");
+    }
+  }
+}

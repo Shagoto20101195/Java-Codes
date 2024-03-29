@@ -1,0 +1,24 @@
+1 public class Q1
+2 {  
+3       public static void main(String[] args)
+4       {
+5             int x = 0, y =0;
+6             int sum = 0;
+7             while (x < 10){
+8                   y = x - 3;
+9                   y = 40;
+10                   while (y > 22){
+11                         if ((sum > 30) && (sum < 40)) 
+12                               sum = sum + x * 2 ;
+13                         else if ((sum > 40) && (sum < 50)) 
+14
+                              sum = sum + x * 3;  
+15                          else 
+16                                sum = sum + 23;
+17                         System.out.println(sum);
+18                         y = y - 10;
+19                   }
+20                   x += 2;
+21             }
+22       }
+23 }

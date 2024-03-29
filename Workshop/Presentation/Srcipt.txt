@@ -1,0 +1,27 @@
+Hello everyone welcome to cse221 video presentation on Palindrome Partitioning.
+This is Andalib Rahman Shagoto and my peer ... from the Dept. of CSE, BRACU.
+So let's begin
+
+* next *
+
+Firstly let us recall a palindrome. We know that a palindrome is a string that reads
+the same both front and back. Also another fact for a palindrome is that, the
+substring within its first and last character is also a palindrome. So if we look at e.g.
+
+* show 1st one *
+
+The string ... is a palindrome since its back reads the same as well that is ...
+also notice that our 2nd condition holds true that the substring "aa" between f & l char
+which is also a palindrome.
+
+* show 2nd one *
+
+And for the 2nd e.g the string is not a palindrome since the backward string is ...
+
+* next *
+
+Now about Palindrome Partitioning. Palindrome Partitioning is when string's partitioned
+is in such a way that every substring is a palindrome. As for our convenience, we will be 
+focusing on how we can acheive the minimum partitioning.
+
+* show examples *

@@ -1,0 +1,67 @@
+//Written by Shagoto
+import java.util.Scanner;
+public class LifeWithoutZero
+{
+  public static void main(String[]args)
+  {
+    Scanner read = new Scanner(System.in);
+    
+    int a = read.nextInt();
+    int b = read.nextInt();
+    int c = a + b;
+    
+    char [] aArray = (""+a).toCharArray();
+    char [] bArray = (""+b).toCharArray();
+    char [] cArray = (""+c).toCharArray();
+    
+    char [] newA = new char [aArray.length];
+    int countA = 0;
+    for(int i = 0; i<aArray.length; i++)
+    {
+      if(aArray[i] != 0)
+      {
+        newA[countA] = aArray[i];
+        countA++;
+      }
+    }
+    
+    char [] newB = new char [bArray.length];
+    int countB = 0;
+    for(int i = 0; i<bArray.length; i++)
+    {
+      if(bArray[i] != 0)
+      {
+        newB[countB] = bArray[i];
+        countB++;
+      }
+    }
+    
+    char [] newC = new char [cArray.length];
+    int countC = 0;
+    for(int i = 0; i<cArray.length; i++)
+    {
+      if(cArray[i] != 0)
+      {
+        newC[countC] = cArray[i];
+        countC++;
+      }
+    }
+     
+    String sA = new String (newA);
+    String sB = new String (newB);
+    String sC = new String (newC);
+    
+    a = Integer.parseInt(sA);
+    b = Integer.parseInt(sB);
+    c = Integer.parseInt(sC);
+    
+    if(a + b == c)
+    {
+      System.out.println("YES");
+    }
+    else
+    {
+      System.out.println("NO");
+    }
+  }
+}

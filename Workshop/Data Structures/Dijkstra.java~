@@ -1,0 +1,89 @@
+// May The Father of Understanding Guide Us
+import java.util.*;
+import java.io.*;
+public class Dijkstra
+{
+  static int nmax = 10000+10;
+  static int [] dist = new int[nmax];
+  static int [] link = new int[nmax];
+  static void dijkstra(int source, int n, ArrayList<Node> [] arr)
+  {
+    PriorityQueue<Node> pq = new PriorityQueue<Node>(new Node());
+    dist[source] = 0;
+    pq.add(new Node(source, 0));
+    
+    while(pq.size() > 0)
+    {
+      int u = pq.peek().node;
+      int d = pq.peek().cost;
+      pq.poll();
+      
+      if(dist[u] != d)
+      {
+        continue;
+      }
+      
+      for(Node i: arr[u])
+      {
+        if(d + i.cost < dist[i.node])
+        {
+          link[i.node] = u;
+          dist[i.node] = d + i.cost;
+          pq.add(new Node(i.node, dist[i.node]));
+        }
+      }
+    }
+  }
+  
+  public static void main(String[] args) throws IOException
+  {
+    Scanner read = new Scanner(System.in);
+    
+    ArrayList<Node> [] arr = new ArrayList[nmax];
+    int n = read.nextInt();
+    int e = read.nextInt();
+    
+    for(int i = 0; i<n+1; i++)
+    {
+      arr[i] = new ArrayList<Node>();
+      dist[i] = (int)1e9;
+    }
+    
+    for(int i = 0; i<n; i++)
+    {
+      int u = read.nextInt();
+      int v = read.nextInt();
+      int c = read.nextInt();
+      
+      arr[u].add(new Node(v, c));
+      arr[v].add(new Node(u, c));
+    }
+    
+    dijkstra(1, n, arr);
+    for(int i = 1; i<=n; i++)
+    {
+      System.out.println("Distance from 1 to "+i+" is "+dist[i]);
+    }
+  }
+}
+
+class Node implements Comparator<Node>
+{
+  int node;
+  int cost;
+  
+  public Node()
+  {
+  }
+  
+  public Node(int x, int y)
+  {
+    node = x;
+    cost = y;
+  }
+  
+  public int compare(Node n1, Node n2)
+  {
+    return n1.cost - n2.cost;
+  }
+}

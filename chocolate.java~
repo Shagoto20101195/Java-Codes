@@ -1,0 +1,19 @@
+public class chocolate
+{
+  public int amount()
+  {
+    return 2;
+  }
+  
+  public String taste_Kitkat()
+  {
+    String quality = "good";
+    return quality;
+  }
+  
+  public String taste_Snickers()
+  {
+    String quality = "bad";
+    return quality;
+  }
+}

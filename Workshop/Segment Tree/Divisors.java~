@@ -1,0 +1,25 @@
+import java.util.*;
+import java.io.*;
+public class Divisors
+{
+  static ArrayList<Pair> buckets = new ArrayList<>(); // (L, i)
+  
+  public static void main(String[] args) throws IOException
+  {
+    Scanner read = new Scanner(System.in);
+    
+    
+  }
+}
+
+class Pair
+{
+  int first;
+  int second;
+  
+  public Pair(int x, int y)
+  {
+    first = x;
+    second = y;
+  }
+}

@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Task22
+{
+  public static void main(String[]args)
+  {
+    Scanner read = new Scanner (System.in);
+    
+    System.out.println("Enter number");
+    int num = read.nextInt();
+   
+    String _0 = "zero";
+    String _1 = "one";
+    String _2 = "two";
+    String _3 = "three";
+    
+    int x;
+    for(x=0; x<=3; x++)
+    {
+      if(num == x)
+      {
+        System.out.println(String);
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+//Written by Shagoto
+import java.util.*;
+public class RandomTeams
+{
+  public static void main(String[]args)
+  {
+    Scanner read = new Scanner(System.in); 
+    
+    long n = read.nextLong();
+    long m = read.nextLong();
+    
+    if(n == m)
+    {
+      System.out.println(0+" "+0);
+    }
+    else if(m == 1)
+    {
+      System.out.println(n*(n-1) / 2+" "+n*(n-1) / 2);
+    }
+    else
+    {
+      long temp = n - (m - 1);
+      long ans2 = temp*(temp-1) / 2;
+      
+      long diff = n - (n / m * m);
+      long temp1 = diff * ((n / m + 1)*(n / m) / 2);
+      long temp2 = (m - diff) * (n / m * (n / m - 1) / 2);
+      long ans1 = temp1 + temp2;
+      
+      System.out.println(ans1+" "+ans2);
+    }
+  }
+}

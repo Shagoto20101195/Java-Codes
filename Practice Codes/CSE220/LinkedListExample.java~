@@ -1,0 +1,25 @@
+public class Main
+{
+  public static void main(String [] args)
+  {
+    Node head = null;
+    
+    Node n1 = new Node(10, null);
+    Node n2 = new Node(20, null);
+    n1.next = n2;
+    head = n1;
+    System.out.println(n1.element);
+  }
+}
+
+class Node
+{
+  Object element;
+  Node next;
+  
+  public Node(Object e, Node n)
+  {
+    element = e;
+    next = n;
+  }
+}

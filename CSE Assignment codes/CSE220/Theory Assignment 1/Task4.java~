@@ -1,0 +1,43 @@
+// Task 4
+public class Task4
+{
+  public static void main(String [] args)
+  {
+    
+  }
+  
+  public void printDuplicate(Node head)
+  {
+    int max = 0;
+    for(Node i = head; i!=null; i = i.next)
+    {
+      if(i.element > max)
+      {
+        max = i.element;
+      }
+    }
+    
+    int [] count = new int[max+1];
+    for(Node i = head; i!=null; i = i.next)
+    {
+      count[i.element]++;
+      if(count[i.element] == 2)
+      {
+        System.out.println(i.element);
+        break;
+      }
+    }
+  }
+}
+
+class Node
+{
+  int element;
+  Node next;
+  
+  public Node(int e, Node n)
+  {
+    element = e;
+    next = n;
+  }
+}

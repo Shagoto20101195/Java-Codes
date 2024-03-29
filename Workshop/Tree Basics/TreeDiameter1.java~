@@ -1,0 +1,27 @@
+import java.util.*;
+import java.io.*;
+public class TreeDiameter1
+{
+  static int nmax = (int)1e5 + 10;
+  static ArrayList<Integer> [] arr = new ArrayList[nmax];
+  
+  public static void main(String [] args) throws IOException
+  {
+    Scanner read = new Scanner(System.in);
+    
+    int n = read.nextInt();
+    for(int i = 1; i<=n; i++)
+    {
+      arr[i] = new ArrayList<Integer>();
+    }
+    
+    for(int i = 1; i<n; i++)
+    {
+      int u = read.nextInt();
+      int v = read.nextInt();
+      
+      arr[u].add(v);
+      arr[v].add(u);
+    }
+  }
+}

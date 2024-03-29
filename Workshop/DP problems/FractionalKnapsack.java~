@@ -1,0 +1,43 @@
+import java.util.*;
+public class FractionalKnapsack
+{
+  public static void main(String [] args)
+  {
+    Scanner read = new Scanner(System.in);
+    
+    int n = read.nextInt();
+    int kW = read.nextInt();
+    
+    int [] val = new int[n];
+    int [] weight = new int[n];
+    
+    for(int i = 0; i<n; i++)
+    {
+      weight[i] = read.nextInt();
+    }
+    
+    for(int i = 0; i<n; i++)
+    {
+      val[i] = read.nextInt();
+    }
+    
+    ArrayList<Pair> pairs = new ArrayList<>();
+    for(int i = 0; i<n; i++)
+    {
+      int perVal = val[i] / weight[i];
+      
+    }
+  }
+}
+
+class Pair
+{
+  int perUnit;
+  int item;
+    
+  public Pair(int x, int y)
+  {
+    perUnit = x;
+    item = y;
+  }
+}

@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class Q2
+{
+  public static void main(String[]args)
+  {
+    Scanner read = new Scanner (System.in);
+    
+    int [] a = new int [100];
+    for(int i = 0; i<a.length; i++)
+    {
+      System.out.println("Enter number");
+      a[i] = read.nextInt();
+    }
+    
+    int min = 0;
+    int minindex = 0;
+    
+    for(int i = 0; i<a.length; i++)
+    {
+      min = a[i];
+      minIndex = i;
+      
+      for(int j = i+1; j<a.length; j++)
+      {
+        if(a[i] < min)
+        {
+          min = a[i];
+          minIndex = i;
+        }
+      }
+      
+      int temp = a[j];
+      a[j] = min;
+      a[minIndex] = temp;
+    }
+    
+    System.out.println(a[26]);
+  }
+}

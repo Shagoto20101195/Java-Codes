@@ -1,0 +1,49 @@
+//Written by Shagoto
+import java.util.Scanner;
+public class Main
+{
+  public static void main(String[]args)
+  {
+    Scanner read = new Scanner(System.in);
+    
+    int t = read.nextInt();
+    for(int x = 1; x<=t; x++)
+    {
+      String [] s = new String[5];
+      int [] num = new int[5];
+      if(x == 1)
+      {
+        read.nextLine();
+        for(int i = 0; i<s.length; i++)
+        {
+          s[i] = read.nextLine();
+          char [] ch = s[i].toCharArray();
+          num[i] = ch[ch.length-1];
+        }
+      }
+      else
+      {
+        for(int i = 0; i<s.length; i++)
+        {
+          s[i] = read.nextLine();
+          char [] ch = s[i].toCharArray();
+          num[i] = ch[ch.length-1];
+        }
+      }
+
+      int max = num[0];
+      String react = s[0];
+      for(int i = 1; i<5; i++)
+      {
+        if(num[i] > max)
+        {
+          max = num[i];
+          react = s[i];
+        }
+      }
+      
+      String [] part = react.split(" ");
+      System.out.println("Case "+x+": "+part[0]);
+    }
+  }
+}

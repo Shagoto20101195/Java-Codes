@@ -1,0 +1,19 @@
+import java.util.*;
+import java.io.*;
+public class LCA
+{
+  static int clk = 0;
+  static int nmax = (int)2e5 + 10;
+  static ArratList<Integer> [] arr = new ArrayList[nmax];
+  static int [] st = new int[nmax];
+  static int [] en = new int[nmax];
+  static int [] dfsarr = new int[nmax];
+  static int [] val = new int[nmax];
+  
+  public static void main(String [] args) throws IOException
+  {
+    Scanner read = new Scanner(System.in);
+    
+    
+  }
+}
